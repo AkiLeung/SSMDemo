@@ -65,6 +65,7 @@
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.4" />
           <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
           <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.58" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ssm/web/Web" />
