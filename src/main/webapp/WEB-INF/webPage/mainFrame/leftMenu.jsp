@@ -96,6 +96,15 @@
                 ifrName: "testI18n",
                 mainPath: "<%=basePath %>sysTest/test08.action"
             },
+            {id: "node-02", pId: "root-00", name: "系统管理", isParent: true, open: true},
+            {
+                id: "node-21",
+                pId: "node-02",
+                name: "组织架构",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
         ];
 
         //页面切换

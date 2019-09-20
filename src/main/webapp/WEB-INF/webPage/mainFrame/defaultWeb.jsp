@@ -27,10 +27,22 @@
                         frameborder="0"></iframe>
             </div>
         </div>
+        <div id="tab02" title="tab02" data-options="title:'Current Option',tools:'#menu-tools02'"
+             style="padding: 1px;cursor:pointer">
+            <div class="easyui-accordion" data-options="fit:true,border:false">
+                <iframe id="ifrSysLeft02" name="ifrSysLeft02"
+                        src="<%=basePath %>sysFrame/leftMenu.action" width="100%" height="100%"
+                        frameborder="0"></iframe>
+            </div>
+        </div>
     </div>
     <div id="menu-tools01">
         <a href="javascript:void(0)" class="icon-mini-refresh"
            onclick="javascript:ifrSysLeft01.window.location.reload();"></a>
+    </div>
+    <div id="menu-tools02">
+        <a href="javascript:void(0)" class="icon-mini-refresh"
+           onclick="javascript:ifrSysLeft02.window.location.reload();"></a>
     </div>
 </div>
 <div data-options="region:'center',iconCls:'icon-tip',title:''">
