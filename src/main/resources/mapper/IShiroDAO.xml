@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.core.dao.IShiroDAO">
+    <!--在mapper文件中引入缓存策略-->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+    <!--查询结果-->
+    <resultMap type="User" id="UserResult">
+        <result property="id" column="id"/>
+        <result property="userCode" column="userCode"/>
+        <result property="userName" column="userName"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <!-- 按用户名称查询用户 -->
+    <select id="getUserByUserName" parameterType="com.ssm.core.entity.User" resultMap="UserResult">
+        select * from tbl_user where user_name = #{0} limit 1
+    </select>
+
+    <!-- 按用用户编码称查询角色 -->
+    <select id="getUserRolesByUserCode" resultType="java.lang.String">
+        select role_code from tbl_user_role where user_code = #{0}
+    </select>
+
+    <!--查找用戶是否有某權限-->
+    <select id="getRolePermissionsByRoleCode" resultType="java.lang.String">
+        select permission_name from tbl_role_permission
+            left join tbl_permission on tbl_role_permission.permission_code = tbl_permission.permission_code
+            where role_code = #{0}
+    </select>
+
+</mapper>

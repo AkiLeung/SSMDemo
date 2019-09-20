@@ -1,0 +1,81 @@
+package com.ssm.common.consts;
+
+/**
+ * show 系統 默認權限編碼
+ *
+ * @author JOSEPH.L
+ * Date     2018-12-13
+ * show 注意：除灰色未使用變量，其他所有變量只能新增不能刪除和修改
+ */
+public class AuthCodeConst {
+
+    /**
+     * 系統管理
+     */
+    public final static String SYS_CONFIG_ADMIN = "admin";
+
+    /**
+     * 系統管理
+     */
+    public final static String SYS_CONFIG_TEST = "test";
+
+
+    /**
+     * 所有權限
+     */
+    public final static String SYS_AUTH_ALL = ":*";
+    /**
+     * 查看權限
+     */
+    public final static String SYS_AUTH_READ = ":read";
+    /**
+     * 新增權限
+     */
+    public final static String SYS_AUTH_INSERT = ":insert";
+    /**
+     * 修改權限
+     */
+    public final static String SYS_AUTH_UPDATE = ":update";
+    /**
+     * 刪除權限
+     */
+    public final static String SYS_AUTH_DELETE = ":delete";
+    /**
+     * 凍結權限
+     */
+    public final static String SYS_AUTH_BLOCK = ":block";
+    /**
+     * 菜單權限
+     */
+    public final static String SYS_AUTH_MENU = ":menu";
+
+
+    /**
+     * 测试权限01
+     */
+    public final static String SYS_AUTH_TEST01 = ":test01";
+    /**
+     * 测试权限02
+     */
+    public final static String SYS_AUTH_TEST02 = ":test02";
+    /**
+     * 测试权限03
+     */
+    public final static String SYS_AUTH_TEST03 = ":test03";
+    /**
+     * 测试权限04
+     */
+    public final static String SYS_AUTH_TEST04 = ":test04";
+    /**
+     * 测试权限05
+     */
+    public final static String SYS_AUTH_TEST05 = ":test06";
+    /**
+     * 测试权限06
+     */
+    public final static String SYS_AUTH_TEST06 = ":test06";
+    /**
+     * 测试权限07
+     */
+    public final static String SYS_AUTH_TEST07 = ":test07";
+}
