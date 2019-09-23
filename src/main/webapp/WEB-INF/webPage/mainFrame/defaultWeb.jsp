@@ -1,18 +1,45 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <html>
 <head>
-    <title>SystemName</title>
-    <jsp:include page="../include/common.jsp" flush="true"/>
+    <title><spring:message code="sys.name"/></title>
+    <jsp:include page="../include/include.jsp" flush="true"/>
+    <link rel="stylesheet" href="<%=basePath%>static/css/topStyle.css" type="text/css"/>
 </head>
 <body id="layOut" class="easyui-layout">
 <div id="layOutNorth" data-options="iconCls:'icon-man',region:'north',split:false,title:'',border:false,collapsed:false"
-     style="height: 52px; background-color: #CEDEF2;">
-    欢迎您，<shiro:principal property="userName"/> ！<shiro:principal property="salt"/> ！<shiro:principal property="password"/> ！
+     style="height: 64px; background-color: #CEDEF2;">
+    <div id="container">
+        <div id="hd">
+            <div class="hd-top">
+                <h1 class="logo"><a href="javascript:;" class="logo-icon"></a></h1>
+                <div class="user-info">
+                    <a href="javascript:;" class="user-avatar"><span><i class="info-num">2</i></span></a>
+                    <span class="user-name"> 欢迎您: <shiro:principal property="userName"/></span>
+                </div>
+                <div class="setting ue-clear">
+                    <div class="setting-skin">
+                        <div class="switch-bar">
+                            <i class="skin-icon"></i>
+                            <span class="text">皮肤</span>
+                            <i class="arrow-icon"></i>
+                        </div>
+                    </div>
+                    <ul class="setting-main ue-clear">
+                        <li><a href="javascript:;">桌面</a></li>
+                        <li><a href="javascript:;">设置</a></li>
+                        <li><a href="javascript:;">帮助</a></li>
+                        <li><a href="javascript:;" class="close-btn exit"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div data-options="region:'west',iconCls:'icon-more',split:true,title:'Navigation'"
      style="width: 240px; padding: 0px;">
@@ -60,7 +87,7 @@
     </div>
 </div>
 <div data-options="region:'south',border:false"
-     style="height: 22px; padding: 1px; text-align: center; vertical-align: middle;">Copy Right @ 2015~2019
+     style="height: 22px; padding: 1px; text-align: center; vertical-align: middle;">Copy Right @ 2015~2019！<shiro:principal property="salt"/> ！<shiro:principal property="password"/> ！
 </div>
 </body>
 </html>

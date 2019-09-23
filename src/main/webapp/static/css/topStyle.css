@@ -1,0 +1,231 @@
+html {
+    *overflow: auto;
+}
+
+@charset "utf-8";
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, i {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1.5;
+}
+
+body {
+    background: #fff;
+    font: 13px/1.5 'Microsoft Yahei', Tahoma, '微软雅黑';
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+dl, dt, dd, ol, ul, li {
+    list-style: none;
+}
+
+a {
+    color: #0080cc;
+}
+
+a:hover {
+    color: #267A01;
+    text-decoration: underline;
+}
+
+#container {
+    position: relative;
+}
+
+/*页面头部*/
+#hd {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    background: url('../image/topbg.png') repeat-x;
+    z-index: 2;
+}
+
+.hd-top {
+    height: 55px;
+    padding-top: 9px;
+}
+
+/*logo*/
+.hd-top .logo {
+    position: relative;
+    float: left;
+    margin: 0 0 0 20px;
+    width: 212px;
+    height: 49px;
+    background: url('../image/systemlogo-.png') no-repeat;
+}
+
+.hd-top .logo .logo-icon {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    width: 16px;
+    height: 15px;
+    background: url('../image/topxl.png');
+}
+
+/*用户登录信息*/
+.hd-top .user-info {
+    float: left;
+    margin-left: 35px;
+    width: 200px;
+    height: 49px;
+    line-height: 49px;
+}
+
+.hd-top .user-info .user-avatar {
+    position: relative;
+    float: left;
+    margin-top: 6px;
+    width: 40px;
+    height: 40px;
+    background: url('../image/userfacebg.png');
+}
+
+.hd-top .user-info .user-avatar span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 34px;
+    height: 34px;
+    background: url('../image/userface.png');
+}
+
+.hd-top .user-info .user-avatar span .info-num {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    background: url('../image/msg.png');
+    color: #fff;
+    font-style: normal;
+}
+
+.hd-top .user-info .user-name {
+    float: left;
+    margin-left: 6px;
+    color: #fff;
+}
+
+.hd-top .user-info .more-info {
+    float: left;
+    margin: 19px 0 0 10px;
+    width: 16px;
+    height: 15px;
+    background: url('../image/userxl.png') center center no-repeat;
+}
+
+.hd-top .user-info .more-info.active, .hd-top .user-info .more-info:hover {
+    width: 16px;
+    height: 15px;
+    background: url('../image/topxl.png');
+}
+
+/*顶部设置部分*/
+.hd-top .setting {
+    float: right;
+    height: 49px;
+    margin-right: 1px;
+    line-height: 49px;
+}
+
+.hd-top .setting .setting-skin {
+    float: left;
+}
+
+.hd-top .setting .setting-skin {
+    float: left;
+    position: relative;
+    margin-right: 5px;
+    margin: 10px 8px 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hd-top .setting .setting-skin .text {
+    line-height: 28px;
+    *position: relative;
+    *top: -10px;
+    color: #666;
+}
+
+.hd-top .setting .setting-skin i {
+    position: absolute;
+}
+
+.hd-top .setting .setting-skin i.skin-icon {
+    left: 9px;
+    top: 9px;
+    width: 11px;
+    height: 10px;
+    background: url('../image/skinicon.png');
+}
+
+.hd-top .setting .setting-skin i.arrow-icon {
+    right: 12px;
+    top: 12px;
+    width: 7px;
+    height: 4px;
+    background: url('../image/skinxl.png');
+}
+
+.hd-top .setting .setting-skin:hover i.arrow-icon {
+    background-position: -7px 0;
+}
+
+.hd-top .setting .setting-skin .switch-bar {
+    width: 82px;
+    height: 29px;
+    background: url('../image/skin-bg.png');
+}
+
+.hd-top .setting .setting-main {
+    float: left;
+    width: 152px;
+}
+
+.hd-top .setting .setting-main li {
+    float: left;
+    width: 38px;
+    text-align: center;
+}
+
+.hd-top .setting .setting-main li a {
+    color: #fff;
+}
+
+.hd-top .setting .setting-main li a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.hd-top .setting .setting-main li a.close-btn {
+    float: left;
+    margin: 16px 0 0 11px;
+    width: 14px;
+    height: 14px;
+    background: url('../image/quit.png');
+}
+
+.hd-top .setting .setting-main li a.close-btn:hover {
+    background-position: -14px 0;
+}

@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Title</title>
-    <jsp:include page="../include/common.jsp" flush="true"/>
+    <jsp:include page="../include/include.jsp" flush="true"/>
 </head>
 <body>
 默认显示页:

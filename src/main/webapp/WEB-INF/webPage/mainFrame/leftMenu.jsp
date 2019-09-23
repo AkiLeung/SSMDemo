@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Title</title>
-    <jsp:include page="../include/common.jsp" flush="true"/>
+    <jsp:include page="../include/include.jsp" flush="true"/>
     <script type="text/javascript" src="<%=basePath%>static/ztree/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="<%=basePath%>static/ztree/js/jquery.ztree.core.js"></script>
     <link rel="stylesheet" href="<%=basePath%>static/ztree/css/zTreeStyle/zTreeStyle.css" type="text/css">
