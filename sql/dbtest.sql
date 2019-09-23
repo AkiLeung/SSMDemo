@@ -11,7 +11,7 @@
  Target Server Version : 50716
  File Encoding         : 65001
 
- Date: 12/09/2019 02:11:01
+ Date: 22/09/2019 23:56:14
 */
 
 SET NAMES utf8mb4;
@@ -30,11 +30,12 @@ CREATE TABLE `tbl_permission`  (
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `status` int(1) NOT NULL COMMENT '状态：1有效；2删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_permission
 -- ----------------------------
+INSERT INTO `tbl_permission` VALUES (1, 'P0000', 'admin:*', NULL, NULL, NULL, 1);
 INSERT INTO `tbl_permission` VALUES (32, 'P0001', 'test:test01', NULL, NULL, NULL, 1);
 INSERT INTO `tbl_permission` VALUES (33, 'P0002', 'test:test02', NULL, NULL, NULL, 1);
 INSERT INTO `tbl_permission` VALUES (34, 'P0003', 'test:test03', NULL, NULL, NULL, 1);
@@ -73,6 +74,7 @@ CREATE TABLE `tbl_role_permission`  (
 -- ----------------------------
 -- Records of tbl_role_permission
 -- ----------------------------
+INSERT INTO `tbl_role_permission` VALUES (1, 'R00000', 'P0000');
 INSERT INTO `tbl_role_permission` VALUES (869, 'R00001', 'P0001');
 INSERT INTO `tbl_role_permission` VALUES (870, 'R00001', 'P0002');
 INSERT INTO `tbl_role_permission` VALUES (871, 'R00001', 'P0003');
@@ -86,18 +88,19 @@ INSERT INTO `tbl_role_permission` VALUES (874, 'R00002', 'P0006');
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `user_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `user_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
   `password` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `salt` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '加密盐值',
   `status` int(1) NOT NULL COMMENT '用户状态：1有效; 2删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_user
 -- ----------------------------
-INSERT INTO `tbl_user` VALUES (1, '000000', 'admin', '7002e90cec3a81abefdad7fbe2ad3d46', 'TEST0', 1);
+INSERT INTO `tbl_user` VALUES (1, 'admin', '000000', 'admin', '7002e90cec3a81abefdad7fbe2ad3d46', 'TEST0', 1);
 
 -- ----------------------------
 -- Table structure for tbl_user_role
@@ -108,12 +111,13 @@ CREATE TABLE `tbl_user_role`  (
   `user_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户code',
   `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色code',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_user_role
 -- ----------------------------
-INSERT INTO `tbl_user_role` VALUES (1, '000000', 'R00001');
+INSERT INTO `tbl_user_role` VALUES (1, '000000', 'R00000');
 INSERT INTO `tbl_user_role` VALUES (2, '000000', 'R00002');
+INSERT INTO `tbl_user_role` VALUES (3, '000000', 'R00001');
 
 SET FOREIGN_KEY_CHECKS = 1;
