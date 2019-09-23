@@ -26,6 +26,10 @@ public class User extends BaseEntity {
 
     @Setter
     @Getter
+    private String userType;
+
+    @Setter
+    @Getter
     private String userCode;
 
     @Setter

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -96,15 +97,81 @@
                 ifrName: "testI18n",
                 mainPath: "<%=basePath %>sysTest/test08.action"
             },
-            {id: "node-02", pId: "root-00", name: "系统管理", isParent: true, open: true},
+            <shiro:hasPermission name = "admin:*">
+            {id: "node-02", pId: "root-00", name: "系统设置", isParent: true, open: true},
             {
                 id: "node-21",
                 pId: "node-02",
-                name: "组织架构",
+                name: "账号管理",
                 isParent: false,
                 ifrName: "testI18n",
                 mainPath: "<%=basePath %>sysConfig/test08.action"
             },
+            {
+                id: "node-22",
+                pId: "node-02",
+                name: "权限管理",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-23",
+                pId: "node-02",
+                name: "角色管理",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-24",
+                pId: "node-02",
+                name: "菜单配置",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-25",
+                pId: "node-02",
+                name: "门户维护",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-26",
+                pId: "node-02",
+                name: "流程管理",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-27",
+                pId: "node-02",
+                name: "数据字典",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-28",
+                pId: "node-02",
+                name: "弹窗配置",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            {
+                id: "node-29",
+                pId: "node-02",
+                name: "系统日志",
+                isParent: false,
+                ifrName: "testI18n",
+                mainPath: "<%=basePath %>sysConfig/test08.action"
+            },
+            </shiro:hasPermission>
         ];
 
         //页面切换

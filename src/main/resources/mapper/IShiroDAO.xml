@@ -8,6 +8,7 @@
     <!--查询结果-->
     <resultMap type="User" id="UserResult">
         <result property="id" column="id"/>
+        <result property="userType" column="userType"/>
         <result property="userCode" column="userCode"/>
         <result property="userName" column="userName"/>
         <result property="password" column="password"/>

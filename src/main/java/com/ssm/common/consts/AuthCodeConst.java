@@ -10,12 +10,28 @@ package com.ssm.common.consts;
 public class AuthCodeConst {
 
     /**
-     * 系統管理
+     * 管理员权限
      */
-    public final static String SYS_CONFIG_ADMIN = "admin";
+    public final static String SYS_USER_TYPE_ADMIN = "admin";
 
     /**
-     * 系統管理
+     * 治理层权限
+     */
+    public final static String SYS_USER_TYPE_GOVERN = "govern";
+
+    /**
+     * 管理层权限
+     */
+    public final static String SYS_USER_TYPE_MANAGE = "manage";
+
+    /**
+     * 普通人权限
+     */
+    public final static String SYS_USER_TYPE_PERSON = "person";
+
+
+    /**
+     * 测试权限
      */
     public final static String SYS_CONFIG_TEST = "test";
 
@@ -23,7 +39,7 @@ public class AuthCodeConst {
     /**
      * 所有權限
      */
-    public final static String SYS_AUTH_ALL = ":*";
+    public final static String SYS_AUTH_ALL = "*";
     /**
      * 查看權限
      */
