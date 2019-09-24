@@ -16,18 +16,18 @@
 
     <!-- 按用户名称查询用户 -->
     <select id="getUserByUserName" parameterType="com.ssm.core.entity.User" resultMap="UserResult">
-        select * from tbl_user where user_name = #{0} limit 1
+        select * from tbl_sys_user where user_name = #{0} limit 1
     </select>
 
     <!-- 按用用户编码称查询角色 -->
     <select id="getUserRolesByUserCode" resultType="java.lang.String">
-        select role_code from tbl_user_role where user_code = #{0}
+        select role_code from tbl_sys_user_role where user_code = #{0}
     </select>
 
     <!--查找用戶是否有某權限-->
     <select id="getRolePermissionsByRoleCode" resultType="java.lang.String">
-        select permission_name from tbl_role_permission
-            left join tbl_permission on tbl_role_permission.permission_code = tbl_permission.permission_code
+        select permission_name from tbl_sys_role_permission
+            left join tbl_sys_permission on tbl_sys_role_permission.permission_code = tbl_sys_permission.permission_code
             where role_code = #{0}
     </select>
 

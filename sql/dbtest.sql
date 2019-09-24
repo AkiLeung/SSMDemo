@@ -11,17 +11,39 @@
  Target Server Version : 50716
  File Encoding         : 65001
 
- Date: 22/09/2019 23:56:14
+ Date: 24/09/2019 16:54:09
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for tbl_permission
+-- Table structure for tb_sysl_role_permission
 -- ----------------------------
-DROP TABLE IF EXISTS `tbl_permission`;
-CREATE TABLE `tbl_permission`  (
+DROP TABLE IF EXISTS `tb_sysl_role_permission`;
+CREATE TABLE `tb_sysl_role_permission`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色id',
+  `permission_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限id',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 875 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tb_sysl_role_permission
+-- ----------------------------
+INSERT INTO `tb_sysl_role_permission` VALUES (1, 'R00000', 'P0000');
+INSERT INTO `tb_sysl_role_permission` VALUES (869, 'R00001', 'P0001');
+INSERT INTO `tb_sysl_role_permission` VALUES (870, 'R00001', 'P0002');
+INSERT INTO `tb_sysl_role_permission` VALUES (871, 'R00001', 'P0003');
+INSERT INTO `tb_sysl_role_permission` VALUES (872, 'R00001', 'P0004');
+INSERT INTO `tb_sysl_role_permission` VALUES (873, 'R00002', 'P0005');
+INSERT INTO `tb_sysl_role_permission` VALUES (874, 'R00002', 'P0006');
+
+-- ----------------------------
+-- Table structure for tbl_sys_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_sys_permission`;
+CREATE TABLE `tbl_sys_permission`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `permission_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限id',
   `permission_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限名称',
@@ -33,21 +55,21 @@ CREATE TABLE `tbl_permission`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of tbl_permission
+-- Records of tbl_sys_permission
 -- ----------------------------
-INSERT INTO `tbl_permission` VALUES (1, 'P0000', 'admin:*', NULL, NULL, NULL, 1);
-INSERT INTO `tbl_permission` VALUES (32, 'P0001', 'test:test01', NULL, NULL, NULL, 1);
-INSERT INTO `tbl_permission` VALUES (33, 'P0002', 'test:test02', NULL, NULL, NULL, 1);
-INSERT INTO `tbl_permission` VALUES (34, 'P0003', 'test:test03', NULL, NULL, NULL, 1);
-INSERT INTO `tbl_permission` VALUES (35, 'P0004', 'test:test04', NULL, NULL, NULL, 1);
-INSERT INTO `tbl_permission` VALUES (36, 'P0005', 'test:test05', NULL, NULL, NULL, 1);
-INSERT INTO `tbl_permission` VALUES (37, 'P0006', 'test:test06', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (1, 'P0000', 'admin:*', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (32, 'P0001', 'test:test01', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (33, 'P0002', 'test:test02', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (34, 'P0003', 'test:test03', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (35, 'P0004', 'test:test04', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (36, 'P0005', 'test:test05', NULL, NULL, NULL, 1);
+INSERT INTO `tbl_sys_permission` VALUES (37, 'P0006', 'test:test06', NULL, NULL, NULL, 1);
 
 -- ----------------------------
--- Table structure for tbl_role
+-- Table structure for tbl_sys_role
 -- ----------------------------
-DROP TABLE IF EXISTS `tbl_role`;
-CREATE TABLE `tbl_role`  (
+DROP TABLE IF EXISTS `tbl_sys_role`;
+CREATE TABLE `tbl_sys_role`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `role_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -56,37 +78,15 @@ CREATE TABLE `tbl_role`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of tbl_role
+-- Records of tbl_sys_role
 -- ----------------------------
-INSERT INTO `tbl_role` VALUES (5, 'R00001', '测试权限', 1);
+INSERT INTO `tbl_sys_role` VALUES (5, 'R00001', '测试权限', 1);
 
 -- ----------------------------
--- Table structure for tbl_role_permission
+-- Table structure for tbl_sys_user
 -- ----------------------------
-DROP TABLE IF EXISTS `tbl_role_permission`;
-CREATE TABLE `tbl_role_permission`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色id',
-  `permission_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限id',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 875 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tbl_role_permission
--- ----------------------------
-INSERT INTO `tbl_role_permission` VALUES (1, 'R00000', 'P0000');
-INSERT INTO `tbl_role_permission` VALUES (869, 'R00001', 'P0001');
-INSERT INTO `tbl_role_permission` VALUES (870, 'R00001', 'P0002');
-INSERT INTO `tbl_role_permission` VALUES (871, 'R00001', 'P0003');
-INSERT INTO `tbl_role_permission` VALUES (872, 'R00001', 'P0004');
-INSERT INTO `tbl_role_permission` VALUES (873, 'R00002', 'P0005');
-INSERT INTO `tbl_role_permission` VALUES (874, 'R00002', 'P0006');
-
--- ----------------------------
--- Table structure for tbl_user
--- ----------------------------
-DROP TABLE IF EXISTS `tbl_user`;
-CREATE TABLE `tbl_user`  (
+DROP TABLE IF EXISTS `tbl_sys_user`;
+CREATE TABLE `tbl_sys_user`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `user_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -98,15 +98,15 @@ CREATE TABLE `tbl_user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of tbl_user
+-- Records of tbl_sys_user
 -- ----------------------------
-INSERT INTO `tbl_user` VALUES (1, 'admin', '000000', 'admin', '7002e90cec3a81abefdad7fbe2ad3d46', 'TEST0', 1);
+INSERT INTO `tbl_sys_user` VALUES (1, 'admin', '000000', 'admin', '7002e90cec3a81abefdad7fbe2ad3d46', 'TEST0', 1);
 
 -- ----------------------------
--- Table structure for tbl_user_role
+-- Table structure for tbl_sys_user_role
 -- ----------------------------
-DROP TABLE IF EXISTS `tbl_user_role`;
-CREATE TABLE `tbl_user_role`  (
+DROP TABLE IF EXISTS `tbl_sys_user_role`;
+CREATE TABLE `tbl_sys_user_role`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户code',
   `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色code',
@@ -114,10 +114,10 @@ CREATE TABLE `tbl_user_role`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of tbl_user_role
+-- Records of tbl_sys_user_role
 -- ----------------------------
-INSERT INTO `tbl_user_role` VALUES (1, '000000', 'R00000');
-INSERT INTO `tbl_user_role` VALUES (2, '000000', 'R00002');
-INSERT INTO `tbl_user_role` VALUES (3, '000000', 'R00001');
+INSERT INTO `tbl_sys_user_role` VALUES (1, '000000', 'R00000');
+INSERT INTO `tbl_sys_user_role` VALUES (2, '000000', 'R00002');
+INSERT INTO `tbl_sys_user_role` VALUES (3, '000000', 'R00001');
 
 SET FOREIGN_KEY_CHECKS = 1;

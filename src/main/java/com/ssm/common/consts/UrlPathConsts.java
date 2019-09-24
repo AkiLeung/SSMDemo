@@ -22,9 +22,9 @@ public class UrlPathConsts {
     /**
      * 系统默认主页
      */
-    public final static String STR_MAIN_FRAME_SHOW_PAGE = STR_SERVER_PATH + "/mainFrame/defaultWeb.jsp";
-    public final static String STR_MAIN_LEFT_MENU_PAGE = STR_SERVER_PATH + "/mainFrame/leftMenu.jsp";
-    public final static String STR_MAIN_CENTER_AREA_PAGE = STR_SERVER_PATH + "/mainFrame/mainShow.jsp";
+    public final static String STR_MAIN_FRAME_SHOW_PAGE = STR_SERVER_PATH + "/sysFrame/defaultWeb.jsp";
+    public final static String STR_MAIN_LEFT_MENU_PAGE = STR_SERVER_PATH + "/sysFrame/leftMenu.jsp";
+    public final static String STR_MAIN_CENTER_AREA_PAGE = STR_SERVER_PATH + "/sysFrame/mainShow.jsp";
 
     /**
      * 系统默认测试
