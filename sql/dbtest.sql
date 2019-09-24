@@ -11,17 +11,17 @@
  Target Server Version : 50716
  File Encoding         : 65001
 
- Date: 24/09/2019 16:54:09
+ Date: 24/09/2019 16:55:48
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for tb_sysl_role_permission
+-- Table structure for tb_sys_role_permission
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_sysl_role_permission`;
-CREATE TABLE `tb_sysl_role_permission`  (
+DROP TABLE IF EXISTS `tb_sys_role_permission`;
+CREATE TABLE `tb_sys_role_permission`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色id',
   `permission_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限id',
@@ -29,15 +29,15 @@ CREATE TABLE `tb_sysl_role_permission`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 875 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of tb_sysl_role_permission
+-- Records of tb_sys_role_permission
 -- ----------------------------
-INSERT INTO `tb_sysl_role_permission` VALUES (1, 'R00000', 'P0000');
-INSERT INTO `tb_sysl_role_permission` VALUES (869, 'R00001', 'P0001');
-INSERT INTO `tb_sysl_role_permission` VALUES (870, 'R00001', 'P0002');
-INSERT INTO `tb_sysl_role_permission` VALUES (871, 'R00001', 'P0003');
-INSERT INTO `tb_sysl_role_permission` VALUES (872, 'R00001', 'P0004');
-INSERT INTO `tb_sysl_role_permission` VALUES (873, 'R00002', 'P0005');
-INSERT INTO `tb_sysl_role_permission` VALUES (874, 'R00002', 'P0006');
+INSERT INTO `tb_sys_role_permission` VALUES (1, 'R00000', 'P0000');
+INSERT INTO `tb_sys_role_permission` VALUES (869, 'R00001', 'P0001');
+INSERT INTO `tb_sys_role_permission` VALUES (870, 'R00001', 'P0002');
+INSERT INTO `tb_sys_role_permission` VALUES (871, 'R00001', 'P0003');
+INSERT INTO `tb_sys_role_permission` VALUES (872, 'R00001', 'P0004');
+INSERT INTO `tb_sys_role_permission` VALUES (873, 'R00002', 'P0005');
+INSERT INTO `tb_sys_role_permission` VALUES (874, 'R00002', 'P0006');
 
 -- ----------------------------
 -- Table structure for tbl_sys_permission
