@@ -34,7 +34,7 @@
     </context:component-scan>
 
     <!-- 00 dbconfig.properties -->
-    <context:property-placeholder location="classpath:dbconfig.properties"/>
+    <context:property-placeholder location="classpath:dbConfig.properties"/>
 
     <!--负责加载外部语言文件的-->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
@@ -50,6 +50,7 @@
     <!-- 配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
+        <property name="driverClassName" value="${connection.driverClassName}"/>
         <property name="url" value="${connection.url}"/>
         <property name="username" value="${connection.username}"/>
         <property name="password" value="${connection.password}"/>

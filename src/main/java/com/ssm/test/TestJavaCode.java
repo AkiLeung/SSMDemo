@@ -1,10 +1,12 @@
 package com.ssm.test;
 
-import org.springframework.util.DigestUtils;
+import com.ssm.core.base.BaseController;
+import org.junit.Test;
 
-public class TestJavaCode {
+public class TestJavaCode extends BaseController {
 
-    public static void main(String[] args) {
+    @Test
+    public void TestLog(){
 
     }
 }

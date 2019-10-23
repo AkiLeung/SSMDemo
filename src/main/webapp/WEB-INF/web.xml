@@ -6,14 +6,24 @@
     <display-name>ssm</display-name>
 
     <!-- 針對 log4j2 對象日誌記錄 -->
-    <context-param>
-        <param-name>log4jContextName</param-name>
-        <param-value>star</param-value>
-    </context-param>
-    <context-param>
-        <param-name>log4jConfiguration</param-name>
-        <param-value>classpath:log4j2.xml</param-value>
-    </context-param>
+    <!--<context-param>-->
+        <!--<param-name>log4jContextName</param-name>-->
+        <!--<param-value>star</param-value>-->
+    <!--</context-param>-->
+    <!--<context-param>-->
+        <!--<param-name>log4jConfiguration</param-name>-->
+        <!--<param-value>classpath:log4j2.xml</param-value>-->
+    <!--</context-param>-->
+
+    <!-- log4j日志配置 -->
+    <!--<context-param>-->
+        <!--<param-name>log4jConfigLocation</param-name>-->
+        <!--<param-value>classpath:log4j.properties</param-value>-->
+    <!--</context-param>-->
+    <!--<listener>-->
+        <!--<description>log4j配置加载器</description>-->
+        <!--<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>-->
+    <!--</listener>-->
 
     <!-- 针对Spring配置：读取配置文件 -->
     <context-param>
@@ -25,10 +35,16 @@
     <listener>
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
+
     <!-- 注册ServletContext监听器，创建容器对象，并且将ApplicationContext对象放到Application域中 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <!-- 注册日志监听器 -->
+    <!--<listener>-->
+        <!--<listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>-->
+    <!--</listener>-->
 
     <!-- 针对SpringMVC的配置：中央调度器：本质上一个serlvet 配置的关于SpringMVC组件 -->
     <servlet>

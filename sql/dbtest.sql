@@ -11,33 +11,29 @@
  Target Server Version : 50716
  File Encoding         : 65001
 
- Date: 24/09/2019 16:55:48
+ Date: 23/10/2019 00:09:46
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for tb_sys_role_permission
+-- Table structure for tbl_sys_logging
 -- ----------------------------
-DROP TABLE IF EXISTS `tb_sys_role_permission`;
-CREATE TABLE `tb_sys_role_permission`  (
+DROP TABLE IF EXISTS `tbl_sys_logging`;
+CREATE TABLE `tbl_sys_logging`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色id',
-  `permission_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限id',
+  `project_name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `thread_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `caller_filename` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `caller_class` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `caller_method` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `caller_line` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `level_string` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `formatted_message` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
+  `gmt_create` datetime(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 875 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tb_sys_role_permission
--- ----------------------------
-INSERT INTO `tb_sys_role_permission` VALUES (1, 'R00000', 'P0000');
-INSERT INTO `tb_sys_role_permission` VALUES (869, 'R00001', 'P0001');
-INSERT INTO `tb_sys_role_permission` VALUES (870, 'R00001', 'P0002');
-INSERT INTO `tb_sys_role_permission` VALUES (871, 'R00001', 'P0003');
-INSERT INTO `tb_sys_role_permission` VALUES (872, 'R00001', 'P0004');
-INSERT INTO `tb_sys_role_permission` VALUES (873, 'R00002', 'P0005');
-INSERT INTO `tb_sys_role_permission` VALUES (874, 'R00002', 'P0006');
+) ENGINE = InnoDB AUTO_INCREMENT = 131 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tbl_sys_permission
@@ -52,7 +48,7 @@ CREATE TABLE `tbl_sys_permission`  (
   `icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `status` int(1) NOT NULL COMMENT '状态：1有效；2删除',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbl_sys_permission
@@ -81,6 +77,28 @@ CREATE TABLE `tbl_sys_role`  (
 -- Records of tbl_sys_role
 -- ----------------------------
 INSERT INTO `tbl_sys_role` VALUES (5, 'R00001', '测试权限', 1);
+
+-- ----------------------------
+-- Table structure for tbl_sys_role_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_sys_role_permission`;
+CREATE TABLE `tbl_sys_role_permission`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '角色id',
+  `permission_code` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '权限id',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 875 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tbl_sys_role_permission
+-- ----------------------------
+INSERT INTO `tbl_sys_role_permission` VALUES (1, 'R00000', 'P0000');
+INSERT INTO `tbl_sys_role_permission` VALUES (869, 'R00001', 'P0001');
+INSERT INTO `tbl_sys_role_permission` VALUES (870, 'R00001', 'P0002');
+INSERT INTO `tbl_sys_role_permission` VALUES (871, 'R00001', 'P0003');
+INSERT INTO `tbl_sys_role_permission` VALUES (872, 'R00001', 'P0004');
+INSERT INTO `tbl_sys_role_permission` VALUES (873, 'R00002', 'P0005');
+INSERT INTO `tbl_sys_role_permission` VALUES (874, 'R00002', 'P0006');
 
 -- ----------------------------
 -- Table structure for tbl_sys_user

@@ -1,7 +1,7 @@
 package com.ssm.common.consts;
 
 /**
- * show 系統 默認權限編碼
+ * 系統 默認權限編碼
  *
  * @author JOSEPH.L
  * Date     2018-12-13

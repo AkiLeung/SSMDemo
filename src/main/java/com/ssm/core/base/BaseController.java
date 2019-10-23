@@ -1,15 +1,17 @@
 package com.ssm.core.base;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
+
 import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  * 功能说明：所有Controller對象繼承基本的公用信息
  * Sample
+ *
  * @author Joseph
  * @date 20181108
  */
@@ -18,7 +20,7 @@ public abstract class BaseController {
     /**
      * 日志对象
      */
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+    private Log logger = LogFactory.getLog(getClass());
 
     /**
      * 视图模型
@@ -35,6 +37,7 @@ public abstract class BaseController {
 
     /**
      * 查詢所有數據
+     *
      * @param uuid
      * @return String
      */
@@ -44,6 +47,7 @@ public abstract class BaseController {
 
     /**
      * 查詢所有數據
+     *
      * @param code
      * @return String
      */
@@ -53,6 +57,7 @@ public abstract class BaseController {
 
     /**
      * 修改和新增數據
+     *
      * @return String
      */
     public String saveData() {
@@ -61,6 +66,7 @@ public abstract class BaseController {
 
     /**
      * 刪除數據
+     *
      * @return String
      */
     public String deleteData() {
@@ -73,7 +79,6 @@ public abstract class BaseController {
      *
      * @param response
      * @param object
-     * @return
      * @return
      */
     protected void printString(HttpServletResponse response, Object object) {

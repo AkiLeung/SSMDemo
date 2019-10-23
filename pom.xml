@@ -35,16 +35,16 @@
         <!-- mybatis-ehcache -->
         <mybatis-ehcache>1.1.0</mybatis-ehcache>
         <!-- mysql连接 -->
-        <mysql.version>5.1.27</mysql.version>
+        <mysql.version>8.0.15</mysql.version>
         <!-- druid持久化 -->
-        <alibaba.druid.version>0.2.23</alibaba.druid.version>
+        <alibaba.druid.version>1.1.10</alibaba.druid.version>
         <!-- xml & json -->
         <alibaba.fastjson.version>1.2.58</alibaba.fastjson.version>
         <!-- shiro安全框架 -->
         <shiro.version>1.2.4</shiro.version>
         <!-- lombok快速注解 -->
         <lombok.version>1.18.6</lombok.version>
-        <!-- log4j2日誌管理 -->
+        <!-- log4j日誌管理 -->
         <log4j.version>2.6.2</log4j.version>
         <slf4j-nop.version>1.7.2</slf4j-nop.version>
         <!-- org.ehcache -->
@@ -150,7 +150,6 @@
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
@@ -243,20 +242,17 @@
         </dependency>
 
         <!-- 日志文件管理包 -->
+        <!-- log4j -->
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
+        <!-- Logging Facade:使用commons-logging -->
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-web</artifactId>
-            <version>${log4j.version}</version>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.2</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
