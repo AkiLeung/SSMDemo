@@ -5,25 +5,19 @@
          version="4.0">
     <display-name>ssm</display-name>
 
-    <!-- 針對 log4j2 對象日誌記錄 -->
-    <!--<context-param>-->
-        <!--<param-name>log4jContextName</param-name>-->
-        <!--<param-value>star</param-value>-->
-    <!--</context-param>-->
-    <!--<context-param>-->
-        <!--<param-name>log4jConfiguration</param-name>-->
-        <!--<param-value>classpath:log4j2.xml</param-value>-->
-    <!--</context-param>-->
-
     <!-- log4j日志配置 -->
-    <!--<context-param>-->
-        <!--<param-name>log4jConfigLocation</param-name>-->
-        <!--<param-value>classpath:log4j.properties</param-value>-->
-    <!--</context-param>-->
-    <!--<listener>-->
-        <!--<description>log4j配置加载器</description>-->
-        <!--<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>-->
-    <!--</listener>-->
+    <context-param>
+        <param-name>log4jContextName</param-name>
+        <param-value>star</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+    <!-- log4j2-end -->
 
     <!-- 针对Spring配置：读取配置文件 -->
     <context-param>

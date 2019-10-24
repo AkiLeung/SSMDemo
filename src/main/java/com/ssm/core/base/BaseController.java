@@ -1,7 +1,7 @@
 package com.ssm.core.base;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
 
@@ -20,13 +20,12 @@ public abstract class BaseController {
     /**
      * 日志对象
      */
-    private Log logger = LogFactory.getLog(getClass());
+    private Logger Logger = LogManager.getLogger(BaseController.class);
 
     /**
      * 视图模型
      */
     public ModelAndView modelAndView;
-
 
     /**
      * 查詢所有數據

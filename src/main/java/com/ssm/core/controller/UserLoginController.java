@@ -9,11 +9,12 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -25,9 +26,10 @@ import javax.servlet.http.HttpServletRequest;
 public class UserLoginController extends BaseController {
 
     /**
-     * 日誌對象
+     * 日志对象
      */
-    private static Log logger = LogFactory.getLog(UserLoginController.class);
+    private Logger logger = LogManager.getLogger(UserLoginController.class);
+
     /**
      * 登录验证
      */

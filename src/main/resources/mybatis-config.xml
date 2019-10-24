@@ -8,13 +8,12 @@
         <setting name="cacheEnabled" value="true" />
         <!--驼峰命名和MYSQL下划线匹配-->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
-        <!-- 设置在控制台输出日志 -->
-        <!--<setting name="logImpl" value="STDOUT_LOGGING"/>-->
+        <!-- 设置在控制台输出日志 STDOUT_LOGGING-->
+        <setting name="logImpl" value="LOG4J2"/>
     </settings>
 
     <typeAliases>
         <package name="com.ssm.core.entity"/>
         <package name="com.ssm.common.utils"/>
     </typeAliases>
-
 </configuration>
