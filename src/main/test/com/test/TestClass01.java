@@ -1,11 +1,10 @@
 package com.test;
 
-import com.ssm.common.utils.ConnectionFactory;
+import com.ssm.common.utils.Connection;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.Test;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
@@ -25,11 +24,11 @@ public class TestClass01 {
         logger.error("我是error信息");
     }
 
-    ConnectionFactory connectionFactory = new ConnectionFactory();
+    Connection connection = new Connection();
 
     @Test
     public void test02() throws SQLException {
-        Connection connection = connectionFactory.getConnection();
+        java.sql.Connection connection = this.connection.getConnection();
         if(connection==null){
             System.out.println("空");
         }else{
