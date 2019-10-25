@@ -1,12 +1,10 @@
 package com.ssm.core.base;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.web.servlet.ModelAndView;
 import com.alibaba.fastjson.JSON;
+import org.springframework.web.servlet.ModelAndView;
 
-import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * 功能说明：所有Controller對象繼承基本的公用信息
@@ -16,11 +14,6 @@ import javax.servlet.http.HttpServletResponse;
  * @date 20181108
  */
 public abstract class BaseController {
-
-    /**
-     * 日志对象
-     */
-    private Logger Logger = LogManager.getLogger(BaseController.class);
 
     /**
      * 视图模型

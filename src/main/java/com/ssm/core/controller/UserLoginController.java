@@ -34,16 +34,7 @@ public class UserLoginController extends BaseController {
      * 登录验证
      */
     @RequestMapping(value = "welcome.action")
-    public ModelAndView system(HttpServletRequest request) {
-        System.out.println("S:日记记录*****************");
-        logger.debug("This is debug");
-        logger.info("This is info");
-        logger.warn("This is warn");
-        logger.error("This is error");
-        logger.trace("This is trace");
-        logger.fatal("This is fatal");
-        System.out.println("E:日记记录*****************");
-
+    public ModelAndView systemLogin(HttpServletRequest request) {
         modelAndView = new ModelAndView();
         //獲取登錄頁面信息：用戶工號和密碼
         String username = request.getParameter("username");
@@ -56,6 +47,7 @@ public class UserLoginController extends BaseController {
         //當Session不為空的時候自動登錄
         User user = (User) session.getAttribute("user");
         if (user != null) {
+            logger.info("User: " + user.getUserName() + " login System");
             modelAndView.setViewName(UrlPathConsts.STR_MAIN_FRAME_SHOW_PAGE);
             return modelAndView;
         }
@@ -69,7 +61,7 @@ public class UserLoginController extends BaseController {
             user = (User) subject.getPrincipal();
             //使用Session记录当前用户信息，方便其他使用
             session.setAttribute("user", user);
-            logger.info("用户 "+ user.getUserName() +" 登录!");
+            logger.info("User: " + user.getUserName() + " login System");
             modelAndView.addObject("login", "true");
             modelAndView.setViewName(UrlPathConsts.STR_MAIN_FRAME_SHOW_PAGE);
         } catch (UnknownAccountException ex) {
